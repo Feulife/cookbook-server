@@ -15,5 +15,6 @@
   "functions": {
     "/*.js": {
       "maxDuration": 10
-    },
+    }
+  }
 }
