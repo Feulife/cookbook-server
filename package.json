@@ -1,0 +1,22 @@
+{
+  "name": "cookbook-server",
+  "version": "1.0.0",
+  "description": "the srver part of cookbook project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Feulife/cookbook-server.git"
+  },
+  "keywords": [
+    "cookbook"
+  ],
+  "author": "Andrii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Feulife/cookbook-server/issues"
+  },
+  "homepage": "https://github.com/Feulife/cookbook-server#readme"
+}
