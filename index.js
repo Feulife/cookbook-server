@@ -12,6 +12,10 @@ import dotenv from 'dotenv';
 dotenv.config({ path: './.env'});
 
 const Db = process.env.ATLAS_URI;
+
+// await mongoose.connect(`${Db}`);
+// console.info('Connected to CookBook DataBase');
+
 const app = express();
 app.use(cors());
 const httpServer = http.createServer(app);
@@ -33,13 +37,13 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
 });
 
-server.start();
+await server.start();
 
-// app.use(  
-//   cors(),
-//   bodyParser.json(),
-//   expressMiddleware(server),
-// );
+app.use(  
+  cors(),
+  bodyParser.json(),
+  expressMiddleware(server),
+);
 
 new Promise((resolve) => httpServer.listen({ port: process.env.PORT }, resolve));
 console.info(`🚀 Server ready at ${process.env.PORT}`);
