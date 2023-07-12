@@ -15,8 +15,16 @@ const Db = process.env.ATLAS_URI;
 const app = express();
 const httpServer = http.createServer(app);
 
-await mongoose.connect(Db);
-console.info('Connected to CookBook DataBase');
+ mongoose.connect(Db, {useNewUrlParser: true})
+  .then(() => {
+    console.info('Connected to CookBook DataBase');
+  })
+  .catch((error) => {
+    console.error(error);
+  })
+
+// await mongoose.connect(Db);
+// console.info('Connected to CookBook DataBase');
 
 const server = new ApolloServer({
   typeDefs,
